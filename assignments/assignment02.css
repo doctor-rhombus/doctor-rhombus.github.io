@@ -69,4 +69,17 @@ img[alt="cat icon"] {
 	right: 0;
 }
 
+img[alt="dog icon"] {
+	position: relative;
+	left: 50px;
+	bottom: 150px;
+}
+
+#positionMe > img {
+	position: absolute;
+	left: 250px;
+	padding-top: 50px;
+}
+
+
 	
