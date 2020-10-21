@@ -64,14 +64,17 @@ elem[16].children[4].children[1].onclick = function(){sub1(elem[16]);};
 elem[17].children[4].children[1].onclick = function(){sub1(elem[17]);};
 elem[18].children[4].children[1].onclick = function(){sub1(elem[18]);};
 
+
 // create an "add1" function
 function add1 (elem) {
   if(elem.children[2].innerHTML == "-") 
     elem.children[2].innerHTML = "1";
   else {
     let currentScore = elem.children[2].innerHTML;
+	overPar(elem);
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
+	
   }
 }
 
@@ -85,9 +88,17 @@ function sub1 (elem) {
   }
   else {
     let currentScore = elem.children[2].innerHTML;
+	elem.children[3].innerHTML = "-";
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore - 1;
   }
 }
 
-  
+// calculate score over par.
+function overPar (elem) {
+	let score = elem.children[2].innerHTML;
+	let par = elem.children[1].innerHTML;
+	score = Number.parseInt(score);
+	par = Number.parseInt(par);
+	elem.children[3].innerHTML = score - par + 1;
+} 
