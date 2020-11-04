@@ -51,9 +51,9 @@
 	let newClubDistances;
 	
 	function addClub() {
-        let row = document.getElementById("clubTable").insertRow(0);
-		let x = firstRow.insertCell(-1);
-		x.innerHTML = "New Cell";
+        clubs[clubs.length] = clubs[clubs.length - 1];
+		let str = JSON.stringify(newClubName);
+		localStorage.setItem("clubs", str);
 	}
 	
 	// navigate to club distance LIST screen
