@@ -107,10 +107,15 @@
 			</form>
 
 		</div>
+		
+		  
     
     <!--- jquery 3.4.1 -->
-		<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<!--- Angular --->	
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		
+		<div ng-app="payments" ng-controller="myController">
     
 	</body>
 </html>
@@ -126,7 +131,9 @@ var loans = [
   { loan_year: 2024, loan_amount: 10000.00, loan_int_rate: 0.0453 }
 ]; 
 
-// --- function: loadDoc() ---
+// localStorage for loans array
+localStorage.setItem('loans', JSON.stringify('loans'));
+// --- jQuery ready ---
 
 $(document).ready(function(){
   
@@ -185,4 +192,10 @@ function updateLoansArray() {
     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
   }
 }
+
+//Function to validate that year is in the form of numerical XXXX
+function validate() {
+  var year = document.getElementById('loan_year01').value
+  var yearRGEX = 20(1[1-9]|[2-9][0-9])$;
+  var yearResult = yearRGEX.test(year);
 </script>
