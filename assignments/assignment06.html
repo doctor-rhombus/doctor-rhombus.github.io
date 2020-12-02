@@ -143,7 +143,6 @@ $(document).ready(function(){
   
   // pre-fill defaults for other loan years
   for(var i=2; i<6; i++) {
-	$("$loan-year0".mouseenter(function(){ alert("Bye! You now leave p1!") });
     $("#loan_year0" + i).value = defaultYear++;
     $("#loan_year0" + i).prop("disabled", true);
     $("#loan_year0" + i).css("background-color", "gray");
